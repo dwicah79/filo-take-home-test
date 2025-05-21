@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Poppins', sans-serif;
+  --color-primary: #f9d9aa;
+  --color-secondary: #f6ebda;
+}
+
+layer base {
+}
