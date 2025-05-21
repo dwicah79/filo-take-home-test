@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div>
     <NavbarComponent />
-    <router-view />
+    <HeroSection />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import NavbarComponent from './components/NavbarComponent.vue'
+import HeroSection from './components/HeroSection.vue'
 </script>
