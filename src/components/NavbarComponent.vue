@@ -1,5 +1,12 @@
 <template>
-  <header class="bg-transparent fixed top-0 md:top-5 left-1/2 -translate-x-1/2 w-full z-50">
+  <header
+    class="bg-transparent fixed top-0 md:top-5 left-1/2 -translate-x-1/2 w-full z-50"
+    :class="{
+      'bg-white/90 backdrop-blur-md shadow-md transition-all md:bg-white/90 md:backdrop-blur-md md:shadow-md md:rounded-full md:top-5 md:w-full':
+        isScrolled,
+      'bg-transparent': !isScrolled,
+    }"
+  >
     <div class="mx-2 md:mx-10 flex items-center justify-between py-4 px-4">
       <div class="text-2xl font-bold inline-flex items-center gap-2 w-1/3">
         <img src="/images/logo.png" class="w-7 h-5" alt="" />
@@ -95,7 +102,23 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 const mobileOpen = ref(false)
-const toggleMenu = () => (mobileOpen.value = !mobileOpen.value)
+const isScrolled = ref(false)
+
+const toggleMenu = () => {
+  mobileOpen.value = !mobileOpen.value
+}
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 10
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
