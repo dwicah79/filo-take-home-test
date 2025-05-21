@@ -7,6 +7,13 @@ export interface MenuItem {
   variants?: string[]
 }
 
+export interface DeliveryItem {
+  id: number
+  name: string
+  image: string
+  description: string
+}
+
 export const getPopularMenus = (): MenuItem[] => [
   {
     id: 1,
@@ -31,5 +38,26 @@ export const getPopularMenus = (): MenuItem[] => [
     price: '23K',
     rating: 4.8,
     variants: ['Hot', 'Cold'],
+  },
+]
+
+export const getDeliveryItems = (): DeliveryItem[] => [
+  {
+    id: 1,
+    name: 'choose your coffee',
+    image: 'imagecoffee.png',
+    description: 'there are 20+ coffees for you',
+  },
+  {
+    id: 2,
+    name: 'we delivery it to you',
+    image: 'food-truck.png',
+    description: 'Choose delivery service',
+  },
+  {
+    id: 3,
+    name: 'enjoy your coffee',
+    image: 'coffee-cup.png',
+    description: 'Choose delivery service',
   },
 ]
