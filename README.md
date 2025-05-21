@@ -1,91 +1,86 @@
 # 📘 Technical Structure – Filo Take Home Test
 
-Dokumentasi ini menjelaskan struktur teknis proyek, teknologi yang digunakan, serta saran pengembangan lanjutan.
+Dokumentasi ini menjelaskan tools yang saya gunakan selama development dan rencana teknologi jika proyek ini dilanjutkan.
 
 ---
 
-## 🛠 Tools & Software yang Digunakan
+## 🛠 Tools & Software yang Saya Gunakan
 
-- **VSCode** – Editor utama untuk pengembangan
-- **Volar** – VSCode extension untuk Vue 3 + TypeScript
-- **Node.js (v16+)** – Runtime JavaScript
-- **npm** – Package manager
-- **Vite** – Build tool untuk pengembangan modern frontend
-- **Git** – Version control
-- **ESLint** – Linter untuk menjaga konsistensi kode
-- **Prettier** – Code formatter
+- **Visual Studio Code** dengan plugin **Volar**
+- **Node.js** (v16 ke atas) & **npm**
+- **Vite** sebagai build tool modern
+- **Git** untuk version control
+- **ESLint** & **Prettier** untuk menjaga konsistensi dan kebersihan kode
 
 ---
 
-## 📦 Framework / Library / CMS
+## 📦 Framework / Library
 
-- **Vue 3** – Framework utama untuk pengembangan antarmuka
-- **TypeScript** – Superset JavaScript dengan type-checking
-- **Vue Router** – Untuk navigasi halaman (jika digunakan)
-- **Pinia** – State management (jika diperlukan)
-- **Axios** – Untuk komunikasi HTTP dengan backend API
-- **Tailwind CSS** *(opsional)* – CSS utility-first untuk styling cepat dan responsif
+- **Vue 3** dengan **TypeScript** sebagai stack utama
+- **Vue Router** untuk kebutuhan navigasi (jika ada banyak halaman)
+- **Pinia** sebagai state management (opsional jika skala aplikasi membesar)
+- **Axios** untuk komunikasi HTTP dengan backend
+- Styling bisa disesuaikan: saat ini cukup dengan CSS/SCSS, namun **Tailwind CSS** akan saya gunakan jika ingin proses styling lebih efisien
 
 ---
 
 ## 🚀 Jika Proyek Dilanjutkan
 
-Beberapa saran dan arah teknis jika proyek ini ingin dikembangkan lebih lanjut:
+Jika proyek ini dilanjutkan ke tahap produksi atau pengembangan lebih jauh, berikut keputusan yang saya ambil:
 
 ### ✅ Testing
 
-- **Unit Testing**: Vitest atau Jest
-- **E2E Testing**: Cypress atau Playwright
+Saya akan menambahkan pengujian untuk menjaga kestabilan:
+
+- **Vitest** atau **Jest** untuk unit test
+- **Cypress** untuk E2E testing
 
 ### ⚙️ CI/CD & Deployment
 
-- Gunakan **GitHub Actions** atau **GitLab CI/CD** untuk pipeline otomatis
-- **Deploy Frontend** ke:
-  - Vercel
-  - Netlify
-  - Firebase Hosting
-- **Monitoring & Error Logging**:
-  - Sentry
-  - LogRocket
+Untuk automasi dan distribusi:
+
+- Saya akan setup **GitHub Actions** untuk proses CI/CD
+- Aplikasi frontend akan saya deploy ke **Vercel** atau **Netlify** karena kemudahan integrasinya dengan Git
+- Jika menggunakan backend, bisa dideploy ke **Render** atau **Railway**
 
 ### 📚 Dokumentasi
 
-- Gunakan **Storybook** untuk dokumentasi dan preview komponen UI
+Jika UI cukup kompleks, saya akan menggunakan **Storybook** untuk dokumentasi dan preview komponen.
 
 ---
 
-## 🧩 Teknologi Backend & Database yang Direkomendasikan
+## 🧩 Teknologi Backend & Database
 
-Jika backend belum ada, stack berikut sangat disarankan:
+Jika backend diperlukan, berikut teknologi yang akan saya pilih:
 
-- **Backend**:
-  - **Node.js + Express** atau **NestJS**
-  - **Laravel (PHP)** jika prefer PHP
-- **Database**:
-  - **PostgreSQL** atau **MySQL** (relational)
-  - **MongoDB** (NoSQL)
+- **Backend**:  
+  Saya akan menggunakan **Node.js + Express** karena fleksibilitas dan kecepatan setup-nya. Jika dibutuhkan struktur dan modularitas lebih baik, saya akan beralih ke **NestJS**.
+  
+- **Database**:  
+  Saya akan menggunakan **PostgreSQL** karena fiturnya yang kaya dan cocok untuk aplikasi skala produksi.
 
-- **API**:
-  - RESTful API
-  - GraphQL (jika data kompleks dan relasional)
+- **API**:  
+  Saya akan buat **REST API** di awal. Jika kebutuhan lebih kompleks, bisa saya migrasi ke **GraphQL**.
 
 ---
 
 ## 🔍 Optimasi SEO & Kecepatan
 
+Meskipun ini SPA (Single Page App), saya akan tetap memperhatikan SEO dan performa:
+
 ### SEO
 
-- Gunakan [Vue Meta](https://vue-meta.nuxtjs.org/) atau [@vueuse/head](https://github.com/vueuse/head)
-- Tambahkan `sitemap.xml` dan `robots.txt`
-- Pertimbangkan migrasi ke SSR dengan **Nuxt 3** untuk performa dan SEO lebih baik
+- Saya akan menambahkan meta tags dinamis menggunakan `@vueuse/head`
+- Sitemap dan robots.txt akan saya tambahkan secara manual
+- Jika SEO sangat krusial, saya akan migrasi ke SSR menggunakan **Nuxt 3**
 
 ### Performance
 
-- Lazy-load komponen dan halaman
-- Gunakan dynamic imports untuk code-splitting
-- Kompres dan gunakan format gambar modern seperti **WebP**
-- Aktifkan minifikasi & tree-shaking saat build (`npm run build`)
-- Gunakan CDN untuk menyajikan aset statis
+- Saya akan implementasi **lazy load** untuk komponen dan halaman
+- Gambar akan saya kompres dan konversi ke format modern seperti **WebP**
+- Saya akan gunakan **dynamic imports** dan aktifkan code splitting
+- Build production sudah otomatis minify dan tree-shaking via Vite
+- Aset statis bisa disajikan via CDN
 
 ---
 
