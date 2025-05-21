@@ -1,39 +1,92 @@
-# filo-take-home-test
+# 📘 Technical Structure – Filo Take Home Test
 
-This template should help get you started developing with Vue 3 in Vite.
+Dokumentasi ini menjelaskan struktur teknis proyek, teknologi yang digunakan, serta saran pengembangan lanjutan.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🛠 Tools & Software yang Digunakan
 
-## Type Support for `.vue` Imports in TS
+- **VSCode** – Editor utama untuk pengembangan
+- **Volar** – VSCode extension untuk Vue 3 + TypeScript
+- **Node.js (v16+)** – Runtime JavaScript
+- **npm** – Package manager
+- **Vite** – Build tool untuk pengembangan modern frontend
+- **Git** – Version control
+- **ESLint** – Linter untuk menjaga konsistensi kode
+- **Prettier** – Code formatter
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## 📦 Framework / Library / CMS
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Vue 3** – Framework utama untuk pengembangan antarmuka
+- **TypeScript** – Superset JavaScript dengan type-checking
+- **Vue Router** – Untuk navigasi halaman (jika digunakan)
+- **Pinia** – State management (jika diperlukan)
+- **Axios** – Untuk komunikasi HTTP dengan backend API
+- **Tailwind CSS** *(opsional)* – CSS utility-first untuk styling cepat dan responsif
 
-## Project Setup
+---
 
-```sh
-npm install
-```
+## 🚀 Jika Proyek Dilanjutkan
 
-### Compile and Hot-Reload for Development
+Beberapa saran dan arah teknis jika proyek ini ingin dikembangkan lebih lanjut:
 
-```sh
-npm run dev
-```
+### ✅ Testing
 
-### Type-Check, Compile and Minify for Production
+- **Unit Testing**: Vitest atau Jest
+- **E2E Testing**: Cypress atau Playwright
 
-```sh
-npm run build
-```
+### ⚙️ CI/CD & Deployment
 
-### Lint with [ESLint](https://eslint.org/)
+- Gunakan **GitHub Actions** atau **GitLab CI/CD** untuk pipeline otomatis
+- **Deploy Frontend** ke:
+  - Vercel
+  - Netlify
+  - Firebase Hosting
+- **Monitoring & Error Logging**:
+  - Sentry
+  - LogRocket
 
-```sh
-npm run lint
-```
+### 📚 Dokumentasi
+
+- Gunakan **Storybook** untuk dokumentasi dan preview komponen UI
+
+---
+
+## 🧩 Teknologi Backend & Database yang Direkomendasikan
+
+Jika backend belum ada, stack berikut sangat disarankan:
+
+- **Backend**:
+  - **Node.js + Express** atau **NestJS**
+  - **Laravel (PHP)** jika prefer PHP
+- **Database**:
+  - **PostgreSQL** atau **MySQL** (relational)
+  - **MongoDB** (NoSQL)
+
+- **API**:
+  - RESTful API
+  - GraphQL (jika data kompleks dan relasional)
+
+---
+
+## 🔍 Optimasi SEO & Kecepatan
+
+### SEO
+
+- Gunakan [Vue Meta](https://vue-meta.nuxtjs.org/) atau [@vueuse/head](https://github.com/vueuse/head)
+- Tambahkan `sitemap.xml` dan `robots.txt`
+- Pertimbangkan migrasi ke SSR dengan **Nuxt 3** untuk performa dan SEO lebih baik
+
+### Performance
+
+- Lazy-load komponen dan halaman
+- Gunakan dynamic imports untuk code-splitting
+- Kompres dan gunakan format gambar modern seperti **WebP**
+- Aktifkan minifikasi & tree-shaking saat build (`npm run build`)
+- Gunakan CDN untuk menyajikan aset statis
+
+---
+
+© 2025 – Filo Take Home Test – Vue 3 + Vite
