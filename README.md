@@ -1,87 +1,82 @@
 # 📘 Technical Structure – Filo Take Home Test
 
-Dokumentasi ini menjelaskan tools yang saya gunakan selama development dan rencana teknologi jika proyek ini dilanjutkan.
+Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, serta keputusan arsitektur jika proyek ini dilanjutkan.
 
 ---
 
 ## 🛠 Tools & Software yang Saya Gunakan
 
-- **Visual Studio Code** dengan plugin **Volar**
-- **Node.js** (v16 ke atas) & **npm**
-- **Vite** sebagai build tool modern
-- **Git** untuk version control
-- **ESLint** & **Prettier** untuk menjaga konsistensi dan kebersihan kode
+- **Visual Studio Code** (dengan plugin Volar)
+- **Node.js** dan **npm**
+- **Composer** untuk dependency PHP
+- **Vite** untuk bundling frontend
+- **Git** sebagai version control
+- **ESLint** & **Prettier** untuk menjaga konsistensi kode
 
 ---
 
-## 📦 Framework / Library
+## ⚙️ Framework / Library
 
-- **Vue 3** dengan **TypeScript** sebagai stack utama
-- **Vue Router** untuk kebutuhan navigasi (jika ada banyak halaman)
-- **Pinia** sebagai state management (opsional jika skala aplikasi membesar)
-- **Axios** untuk komunikasi HTTP dengan backend
-- **Tailwind CSS** akan saya gunakan jika ingin proses styling lebih efisien
+### Frontend
+- **Vue 3** dengan **TypeScript**
+- **Vue Router** untuk navigasi (jika diperlukan)
+- **Pinia** untuk manajemen state (jika kompleksitas aplikasi meningkat)
+- **Axios** untuk HTTP client
+
+### Backend
+- **Laravel** – Framework backend utama
+- Saya menggunakan **Laravel Starter Kit dengan Vue** untuk integrasi fullstack yang efisien
+- **Sanctum** sebagai sistem otentikasi default
 
 ---
 
 ## 🚀 Jika Proyek Dilanjutkan
 
-Jika proyek ini dilanjutkan ke tahap produksi atau pengembangan lebih jauh, berikut keputusan yang saya ambil:
+Jika proyek ini dilanjutkan ke skala produksi atau pengembangan tim:
 
 ### ✅ Testing
 
-Saya akan menambahkan pengujian untuk menjaga kestabilan:
-
-- **Vitest** atau **Jest** untuk unit test
-- **Cypress** untuk E2E testing
-
+- Backend: saya akan gunakan **Pest PHP** atau **PHPUnit**
+  
 ### ⚙️ CI/CD & Deployment
 
-Untuk automasi dan distribusi:
+- Akan saya siapkan **GitHub Actions** untuk workflow otomatis seperti testing & deploy
+- **Frontend** dan **backend** akan dideploy di server seperti **DigitalOcean** atau **Niagahoster**
 
-- Saya akan setup **GitHub Actions** untuk proses CI/CD
-- Aplikasi frontend akan saya deploy ke **Vercel** atau **Netlify** karena kemudahan integrasinya dengan Git
-- Jika menggunakan backend, bisa dideploy ke **Render** atau **Railway**
 
 ### 📚 Dokumentasi
 
-Jika UI cukup kompleks, saya akan menggunakan **Storybook** untuk dokumentasi dan preview komponen.
+- Saya akan setup dokumentasi endpoint API menggunakan **Laravel Scribe** atau **Postman**
+- Untuk dokumentasi UI, saya bisa pertimbangkan **Storybook** jika frontend menjadi kompleks
 
 ---
 
 ## 🧩 Teknologi Backend & Database
 
-Jika backend diperlukan, berikut teknologi yang akan saya pilih:
-
-- **Backend**:  
-  Saya akan menggunakan **Node.js + Express** karena fleksibilitas dan kecepatan setup-nya. Jika dibutuhkan struktur dan modularitas lebih baik, saya akan beralih ke **NestJS**.
-  
-- **Database**:  
-  Saya akan menggunakan **PostgreSQL** karena fiturnya yang kaya dan cocok untuk aplikasi skala produksi.
-
-- **API**:  
-  Saya akan buat **REST API** di awal. Jika kebutuhan lebih kompleks, bisa saya migrasi ke **GraphQL**.
+- **Backend**: Laravel
+- **Otentikasi**: Laravel Sanctum
+- **Database**: MySQL atau PostgreSQL, tergantung kebutuhan integrasi
+- **API**: Saya tetap gunakan RESTful API, tetapi akan pertimbangkan GraphQL jika relasi datanya kompleks
 
 ---
 
 ## 🔍 Optimasi SEO & Kecepatan
 
-Meskipun ini SPA (Single Page App), saya akan tetap memperhatikan SEO dan performa:
-
 ### SEO
 
-- Saya akan menambahkan meta tags dinamis menggunakan `@vueuse/head`
-- Sitemap dan robots.txt akan saya tambahkan secara manual
-- Jika SEO sangat krusial, saya akan migrasi ke SSR menggunakan **Nuxt 3**
+- SPA menggunakan Vue memang memiliki keterbatasan SEO. Jika SEO menjadi kebutuhan penting:
+  - Saya akan migrasi ke **Inertia.js + Laravel** untuk SSR ringan
+  - Atau gunakan **Nuxt 3** jika frontend dipecah jadi standalone
 
 ### Performance
 
-- Saya akan implementasi **lazy load** untuk komponen dan halaman
-- Gambar akan saya kompres dan konversi ke format modern seperti **WebP**
-- Saya akan gunakan **dynamic imports** dan aktifkan code splitting
-- Build production sudah otomatis minify dan tree-shaking via Vite
-- Aset statis bisa disajikan via CDN
+- Saya akan aktifkan:
+  - **Lazy-loading** untuk route/component
+  - **Dynamic import** agar bundle lebih kecil
+  - Kompresi gambar dan penggunaan format **WebP**
+- Vite sudah otomatis melakukan minify dan tree-shaking saat `npm run build`
+- CDN bisa digunakan untuk aset besar seperti gambar atau font
 
 ---
 
-© 2025 – Filo Take Home Test – Vue 3 + Vite
+© 2025 – Filo Take Home Test – Laravel + Vue (Starter Kit)
