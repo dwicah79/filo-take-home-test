@@ -1,10 +1,18 @@
 @import 'tailwindcss';
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 @theme {
-  --font-display: 'Poppins', sans-serif;
   --color-primary: #f9d9aa;
   --color-secondary: #f6ebda;
+  --color-brown-500: #6b4b3a;
+  --color-brown-900: #2f2105;
 }
 
-layer base {
+@layer base {
+  .btn-primary {
+    @apply bg-brown-900 hover:bg-brown-500 text-white px-6 py-3 rounded-full font-medium w-fit;
+  }
+
+  .btn-secondary {
+    @apply bg-orange-400 hover:bg-orange-300 text-white p-2 rounded-full font-medium w-fit;
+  }
 }
