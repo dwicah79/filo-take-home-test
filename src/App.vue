@@ -1,11 +1,9 @@
 <template>
   <div>
-    <NavbarComponent />
-    <HeroSection />
+    <Homeview />
   </div>
 </template>
 
 <script setup lang="ts">
-import NavbarComponent from './components/NavbarComponent.vue'
-import HeroSection from './components/HeroSection.vue'
+import Homeview from '@/pages/HomeView.vue'
 </script>
