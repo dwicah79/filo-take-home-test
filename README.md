@@ -20,7 +20,7 @@ Dokumentasi ini menjelaskan tools yang saya gunakan selama development dan renca
 - **Vue Router** untuk kebutuhan navigasi (jika ada banyak halaman)
 - **Pinia** sebagai state management (opsional jika skala aplikasi membesar)
 - **Axios** untuk komunikasi HTTP dengan backend
-- Styling bisa disesuaikan: saat ini cukup dengan CSS/SCSS, namun **Tailwind CSS** akan saya gunakan jika ingin proses styling lebih efisien
+- **Tailwind CSS** akan saya gunakan jika ingin proses styling lebih efisien
 
 ---
 
