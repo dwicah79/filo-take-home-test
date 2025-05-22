@@ -24,27 +24,22 @@
           </p>
 
           <p class="text-neutral-500 text-base md:text-lg leading-relaxed">
-            We are a company that makes and distributes<br />
-            delicious drinks. our main product is made with a<br />
-            secret recipe and available in stores worldwide.
+            We are a company that makes and distributes delicious drinks. our main product is made
+            with a secret recipe and available in stores worldwide.
           </p>
 
-          <button
-            class="mt-4 px-6 py-3 bg-[#36200c] hover:bg-[#50311a] black font-semibold rounded-full transition duration-300"
-          >
-            Get your coffee
-          </button>
+          <button class="btn-primary text-xs md:text-lg mb-5">Get your coffee</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mt-5 md:mt-30 px-10 bg-white">
-    <div class="container mx-auto px-6">
-      <h1 class="font-bold text-2xl md:text-3xl mb-12">
+  <section class="mt-10 md:mt-30 md:px-10 bg-white">
+    <div class="container mx-auto md:px-6">
+      <h1 class="font-bold text-2xl md:text-3xl">
         Special menu <span class="border-b-4 border-orange-500">for you</span>
       </h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8">
         <div
           v-for="(item, index) in getspecialmenu"
           :key="item.id"
