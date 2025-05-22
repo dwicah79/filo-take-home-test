@@ -9,7 +9,7 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/nama-repo.git
+git clone https://github.com/dwicah79/filo-take-home-test.git
 cd nama-repo
 ```
 
