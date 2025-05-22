@@ -30,7 +30,7 @@
           </p>
 
           <button
-            class="mt-4 px-6 py-3 bg-[#36200c] hover:bg-[#50311a] text-white font-semibold rounded-full transition duration-300"
+            class="mt-4 px-6 py-3 bg-[#36200c] hover:bg-[#50311a] black font-semibold rounded-full transition duration-300"
           >
             Get your coffee
           </button>
@@ -96,27 +96,133 @@
       </div>
     </div>
   </section>
+
+  <section
+    id="testimonials"
+    class="bg-[url('/images/bg-coffee.png')] bg-cover bg-center relative py-10 md:mt-20"
+  >
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-bold text-3xl md:text-4xl black text-center mb-10">
+          What they say about us
+        </h1>
+        <p class="text-xl black/80 text-center mb-16 max-w-2xl mx-auto">
+          We always provide the best service and always maintain the quality of coffee
+        </p>
+        <div
+          class="relative overflow-hidden h-96"
+          @mouseenter="pauseAutoPlay"
+          @mouseleave="resumeAutoPlay"
+        >
+          <div
+            class="flex transition-transform duration-500 ease-in-out"
+            :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
+          >
+            <div
+              v-for="(testimonial, index) in testimonials"
+              :key="index"
+              class="w-full flex-shrink-0 px-4"
+            >
+              <div
+                class="bg-primary backdrop-blur-sm rounded-xl p-8 border border-white/20 h-full w-full flex flex-wrap justify-between"
+              >
+                <div class="flex w-1/2 flex-col">
+                  <p class="black/90 italic text-lg mb-6">"{{ testimonial.description }}"</p>
+                  <p class="text-orange-400 font-semibold text-xl">— {{ testimonial.name }}</p>
+                </div>
+                <div class="w-1/2 flex justify-end">
+                  <img
+                    :src="getImageUrl(testimonial.image)"
+                    :alt="testimonial.name"
+                    class="w-30 h-30 rounded-lg border-2 border-white/20 shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center mt-8 space-x-2">
+            <button
+              v-for="(_, index) in testimonials"
+              :key="index"
+              @click="goToSlide(index)"
+              class="w-3 h-3 rounded-full transition-all"
+              :class="{
+                'bg-orange-400 w-6': currentIndex === index,
+                'bg-white/50': currentIndex !== index,
+              }"
+              aria-label="Go to slide"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
-import { getSpecialItems, SpecialItem } from '@/mock/api'
+import { defineComponent, ref, onMounted, onUnmounted } from 'vue'
+import { getSpecialItems, getTestimonialItems, SpecialItem, TestimonialItem } from '@/mock/api'
+
 export default defineComponent({
   name: 'AboutUsComponent',
 
   setup() {
     const getspecialmenu = ref<SpecialItem[]>([])
+    const testimonials = ref<TestimonialItem[]>([])
+    const currentIndex = ref(0)
+    let intervalId: number | undefined
+
     const getImageUrl = (imageName: string) => {
       return `/images/${imageName}`
     }
+
+    const nextSlide = () => {
+      currentIndex.value = (currentIndex.value + 1) % testimonials.value.length
+    }
+
+    const prevSlide = () => {
+      currentIndex.value =
+        (currentIndex.value - 1 + testimonials.value.length) % testimonials.value.length
+    }
+
+    const goToSlide = (index: number) => {
+      currentIndex.value = index
+    }
+
+    const startAutoPlay = () => {
+      intervalId = window.setInterval(() => {
+        nextSlide()
+      }, 5000)
+    }
+
+    const pauseAutoPlay = () => {
+      if (intervalId) clearInterval(intervalId)
+    }
+
+    const resumeAutoPlay = () => {
+      startAutoPlay()
+    }
+
     onMounted(() => {
-      setTimeout(() => {
-        getspecialmenu.value = getSpecialItems()
-      }, 300)
+      getspecialmenu.value = getSpecialItems()
+      testimonials.value = getTestimonialItems()
+      startAutoPlay()
     })
+
+    onUnmounted(() => {
+      pauseAutoPlay()
+    })
+
     return {
       getspecialmenu,
+      testimonials,
       getImageUrl,
+      currentIndex,
+      nextSlide,
+      prevSlide,
+      goToSlide,
+      pauseAutoPlay,
+      resumeAutoPlay,
     }
   },
 })
