@@ -4,6 +4,25 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 
 ---
 
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/username/nama-repo.git
+cd nama-repo
+```
+
+### 2. Install Dependency
+
+```bash
+npm install
+```
+
+## 3. Menjalankan Aplikasi
+
+```bash
+npm run dev
+```
+
 ## 🛠 Tools & Software yang Saya Gunakan
 
 - **Visual Studio Code** (dengan plugin Volar)
@@ -18,12 +37,14 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 ## ⚙️ Framework / Library
 
 ### Frontend
+
 - **Vue 3** dengan **TypeScript**
 - **Vue Router** untuk navigasi (jika diperlukan)
 - **Pinia** untuk manajemen state (jika kompleksitas aplikasi meningkat)
 - **Axios** untuk HTTP client
 
 ### Backend
+
 - **Laravel** – Framework backend utama
 - Saya menggunakan **Laravel Starter Kit dengan Vue** untuk integrasi fullstack yang efisien
 - **Sanctum** sebagai sistem otentikasi default
@@ -37,12 +58,11 @@ Jika proyek ini dilanjutkan ke skala produksi atau pengembangan tim:
 ### ✅ Testing
 
 - Backend: saya akan gunakan **Pest PHP** atau **PHPUnit**
-  
+
 ### ⚙️ CI/CD & Deployment
 
 - Akan saya siapkan **GitHub Actions** untuk workflow otomatis seperti testing & deploy
 - **Frontend** dan **backend** akan dideploy di server seperti **DigitalOcean** atau **Niagahoster**
-
 
 ### 📚 Dokumentasi
 
