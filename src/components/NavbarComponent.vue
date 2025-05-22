@@ -31,7 +31,7 @@
           </li>
         </ul>
       </nav>
-      <div class="w-1/3 flex items-center space-x-4">
+      <div class="w-1/3 items-center space-x-4 hidden md:flex">
         <div class="flex items-center bg-white px-4 py-2 rounded-full w-3/4 shadow-inner">
           <svg
             class="w-5 h-5 text-gray-400 mr-2"
@@ -82,19 +82,42 @@
     <div v-if="mobileOpen" class="md:hidden bg-white shadow-md">
       <ul class="flex flex-col p-4 gap-4 font-medium">
         <li>
-          <a href="#about" class="hover:text-orange-400 transition flex items-center gap-2">
-            <i class="fas fa-info-circle"></i> About us
+          <a href="#about" class="hover:text-orange-400 transition flex items-center gap-1">
+            About us
           </a>
         </li>
         <li>
-          <a href="#product" class="hover:text-orange-400 transition flex items-center gap-2">
-            <i class="fas fa-coffee"></i> Our Product
+          <a href="#product" class="hover:text-orange-400 transition flex items-center gap-1">
+            Our Product
           </a>
         </li>
         <li>
-          <a href="#delivery" class="hover:text-orange-400 transition flex items-center gap-2">
-            <i class="fas fa-truck"></i> Delivery
+          <a href="#delivery" class="hover:text-orange-400 transition flex items-center gap-1">
+            Delivery
           </a>
+        </li>
+        <li>
+          <div class="flex items-center bg-secondary px-4 py-2 rounded-full w-full shadow-inner">
+            <svg
+              class="w-5 h-5 text-gray-400 mr-2"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 3.5a7.5 7.5 0 0013.65 13.65z"
+              ></path>
+            </svg>
+            <input
+              type="text"
+              placeholder="Cappuccino"
+              class="outline-none bg-transparent text-gray-500 w-full placeholder:text-gray-400"
+            />
+          </div>
         </li>
       </ul>
     </div>
