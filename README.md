@@ -4,14 +4,16 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 
 ---
 
-### 1. Clone Repository
+# Tutorial Instalasi Projek
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/username/nama-repo.git
 cd nama-repo
 ```
 
-### 2. Install Dependency
+## 2. Install Dependency
 
 ```bash
 npm install
