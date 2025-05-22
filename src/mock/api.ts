@@ -22,6 +22,13 @@ export interface DeliveryItem {
   description: string
 }
 
+export interface TestimonialItem {
+  id: number
+  name: string
+  image: string
+  description: string[]
+}
+
 export const getPopularMenus = (): MenuItem[] => [
   {
     id: 1,
@@ -118,5 +125,26 @@ export const getSpecialItems = (): SpecialItem[] => [
     price: '12 K',
     image: 'waffle.png',
     rating: 4.8,
+  },
+]
+
+export const getTestimonialItems = (): TestimonialItem[] => [
+  {
+    id: 1,
+    name: 'Naura',
+    image: 'naura.png',
+    description: 'I really love the cappucino, the coffee was very smooth  and creamy. I love it',
+  },
+  {
+    id: 2,
+    name: 'John',
+    image: 'john.png',
+    description: 'this coffee shop is very convenient',
+  },
+  {
+    id: 3,
+    name: 'Azura',
+    image: 'azura.png',
+    description: 'the coffee menu here is very much',
   },
 ]
