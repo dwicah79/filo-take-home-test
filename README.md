@@ -6,6 +6,8 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 
 # Tutorial Instalasi Projek
 
+## Desain Antarmuka = https://www.figma.com/design/FGsYaVvkiUNxNJc2AJuGPb/FILO-TAKEHOMETEST?node-id=2-102t=PFoJLox7xt8rPJeL-1
+
 ## 1. Clone Repository
 
 ```bash
@@ -29,8 +31,7 @@ atau bisa mengunjungi link :https://filo-take-home-test.vercel.app/
 
 ## 🛠 Tools & Software yang Saya Gunakan
 
--**Figma** (Untuk Desain Antarmuka) https://www.figma.com/design/FGsYaVvkiUNxNJc2AJuGPb/FILO-TAKEHOMETEST?node-id=2-102&t=PFoJLox7xt8rPJeL-1
-
+- **Figma** (Untuk Desain Antarmuka)
 - **Visual Studio Code** (dengan plugin Volar)
 - **Node.js** dan **npm**
 - **Composer** untuk dependency PHP
