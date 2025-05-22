@@ -25,7 +25,11 @@ npm install
 npm run dev
 ```
 
+atau bisa mengunjungi link :https://filo-take-home-test.vercel.app/
+
 ## 🛠 Tools & Software yang Saya Gunakan
+
+-**Figma** (Untuk Desain Antarmuka) https://www.figma.com/design/FGsYaVvkiUNxNJc2AJuGPb/FILO-TAKEHOMETEST?node-id=2-102&t=PFoJLox7xt8rPJeL-1
 
 - **Visual Studio Code** (dengan plugin Volar)
 - **Node.js** dan **npm**
