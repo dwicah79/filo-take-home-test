@@ -6,6 +6,14 @@ export interface MenuItem {
   rating?: number
   variants?: string[]
 }
+export interface SpecialItem {
+  id: number
+  name: string
+  image: string
+  price: string
+  rating: number
+  description: string[]
+}
 
 export interface DeliveryItem {
   id: number
@@ -59,5 +67,56 @@ export const getDeliveryItems = (): DeliveryItem[] => [
     name: 'enjoy your coffee',
     image: 'coffee-cup.png',
     description: 'Choose delivery service',
+  },
+]
+
+export const getSpecialItems = (): SpecialItem[] => [
+  {
+    id: 1,
+    name: 'Sandwich',
+    description: 'Bread with meat and vegetables',
+    price: '12 K',
+    image: 'sandwich.png',
+    rating: 4.8,
+  },
+  {
+    id: 2,
+    name: 'Hot Milk',
+    description: 'Hot Milk with less sugar',
+    price: '12 K',
+    image: 'hot-milk.png',
+    rating: 4.8,
+  },
+  {
+    id: 3,
+    name: 'Coffe Ice Cream',
+    description: 'Coffe with ice cream vanilla',
+    price: '12 K',
+    image: 'coffee-ice-cream.png',
+    rating: 4.8,
+  },
+  {
+    id: 4,
+    name: 'Cappucino',
+    description: 'Hot Cappucino',
+    price: '12 K',
+    image: 'cappucino.png',
+    rating: 4.8,
+  },
+  {
+    id: 5,
+    name: 'Moccacinno',
+    description: 'Hot Moccacino',
+    price: '12 K',
+    image: 'moccacino.png',
+    rating: 4.8,
+  },
+  {
+    id: 6,
+    name: 'Waffle Ice Crem',
+    description: 'Waffle with Ice cream',
+    price: '12 K',
+    image: 'waffle.png',
+    rating: 4.8,
   },
 ]
