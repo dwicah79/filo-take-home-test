@@ -68,11 +68,21 @@
                   <div
                     class="h-48 w-full mb-6 flex items-center justify-center rounded-lg overflow-hidden"
                   >
-                    <img
-                      :src="getImageUrl(item.image)"
-                      :alt="item.name"
-                      class="h-full w-full object-cover"
-                    />
+                    <div class="relative">
+                      <img
+                        :src="getImageUrl(item.image)"
+                        :alt="item.name"
+                        class="h-full w-full object-cover"
+                      />
+                      <div class="absolute rounded-full p-1 bg-white/50 top-5 left-2">
+                        <div
+                          class="inline-flex bg-white items-center rounded-full gap-1 px-2 py-0.5"
+                        >
+                          <span class="font-bold">{{ item.rating }}</span>
+                          <span><i class="fa-solid fa-star text-yellow-300"></i></span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="inline-flex justify-between w-full items-center mx-auto">
                     <h3 class="text-2xl font-bold mb-4 text-center">
