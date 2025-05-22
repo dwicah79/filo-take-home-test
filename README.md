@@ -6,8 +6,6 @@ Dokumentasi ini menjelaskan tools yang saya gunakan, teknologi utama proyek, ser
 
 # Tutorial Instalasi Projek
 
-## Desain Antarmuka = https://www.figma.com/design/FGsYaVvkiUNxNJc2AJuGPb/FILO-TAKEHOMETEST?node-id=2-102t=PFoJLox7xt8rPJeL-1
-
 ## 1. Clone Repository
 
 ```bash
@@ -28,6 +26,14 @@ npm run dev
 ```
 
 atau bisa mengunjungi link :https://filo-take-home-test.vercel.app/
+
+---
+
+##Figma
+
+```source
+https://www.figma.com/design/FGsYaVvkiUNxNJc2AJuGPb/FILO-TAKEHOMETEST?node-id=2-102t=PFoJLox7xt8rPJeL-1
+```
 
 ## 🛠 Tools & Software yang Saya Gunakan
 
