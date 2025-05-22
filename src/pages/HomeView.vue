@@ -4,6 +4,7 @@
     <HeroSection />
     <DeliveryComponent />
     <AboutUsComponentVue />
+    <SubscriptionComponent />
   </div>
 </template>
 
@@ -13,6 +14,8 @@ import Navbar from '@/components/NavbarComponent.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import DeliveryComponent from '@/components/DeliveryComponent.vue'
 import AboutUsComponentVue from '@/components/AboutUsComponent.vue'
+import SubscriptionComponent from '@/components/SubcriptionComponent.vue'
+
 export default defineComponent({
   name: 'HomeView',
   components: {
@@ -20,6 +23,7 @@ export default defineComponent({
     HeroSection,
     DeliveryComponent,
     AboutUsComponentVue,
+    SubscriptionComponent,
   },
 })
 </script>
